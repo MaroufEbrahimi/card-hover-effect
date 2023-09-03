@@ -15,6 +15,17 @@ body {
   position: absolute;
 }
 
+.card {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 320px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  border-radius: 10px;
+}
+
 .card .front,
 .card .back {
   width: 100%;
@@ -44,4 +55,63 @@ body {
   font-size: 30px;
   color: #ffc2c2;
   padding-top: 20px;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+  background: url("./img/img2.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.back_content {
+  width: 250px;
+  height: 200px;
+  background-color: rgba(168, 161, 161, 0.1);
+  backdrop-filter: blur(3px);
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.back_content h2 {
+  color: #ffc2c2;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin-top: 30px;
+}
+
+.back_content p {
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.back_content .button {
+  padding: 10px 20px 10px;
+  border: none;
+  border-radius: 10px;
+  background-image: linear-gradient(#fa9a9a, #ffd7a8);
+  color: #fff;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: all 0.7s ease;
+  cursor: pointer;
+}
+
+.back_content:hover > .button {
+  background: #ffd7a8;
+}
+
+.card:hover > .back {
+  transform: rotateY(0deg);
+}
+
+.card:hover > .front {
+  transform: rotateY(-180deg);
 }
