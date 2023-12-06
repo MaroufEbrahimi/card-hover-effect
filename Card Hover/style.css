@@ -1,0 +1,141 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans", sans-serif;
+  background: url("background.jpg") no-repeat center / cover;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  margin-top: 90px;
+}
+
+.card {
+  position: relative;
+  background: url("background.jpg") no-repeat center / cover;
+  color: #fff;
+  width: 250px;
+  height: 400px;
+  border-radius: 15px;
+  margin: 20px;
+  cursor: pointer;
+  transition: all ease-in-out 1s;
+}
+
+.title {
+  font-size: 14px;
+  padding: 2px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.price {
+  margin-top: -25px;
+  text-align: center;
+  height: 130px;
+}
+
+.price h5 {
+  font-size: 4em;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.price h5 sup {
+  font-size: 25px;
+}
+
+.price p {
+  margin-top: -135px;
+  font-size: 12px;
+  padding-bottom: 25px;
+}
+
+.option {
+  position: relative;
+  padding: 10px;
+}
+
+.option li {
+  text-align: center;
+  font-size: 12px;
+  padding: 8px;
+  font-weight: bold;
+  list-style: none;
+}
+
+button {
+  position: absolute;
+  bottom: 5%;
+  left: 31%;
+  outline: none;
+  border: none;
+  color: #eee;
+  background: #5555fa;
+  width: 100px;
+  height: 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all ease-in-out 1s;
+  box-shadow: 0 0 8px #0909e6;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 20em inset #5555fa;
+}
+
+.card:hover button {
+  background: #eee;
+  color: #5555fa;
+}
+
+@media (max-width: 868px) {
+  html {
+    height: auto;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .card {
+    width: 300px;
+    height: 300px;
+  }
+
+  .price {
+    height: 90px;
+    margin-top: -33px;
+  }
+  .price h5 {
+    font-size: 3.3em;
+    padding-bottom: 40px;
+  }
+  .option {
+    padding-top: 25px;
+  }
+  .option li {
+    padding: 5px;
+  }
+}
+@media (max-width: 360px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .card {
+    width: 250px;
+    height: 300px;
+  }
+}
