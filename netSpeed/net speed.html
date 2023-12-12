@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>WELCOME TO FAMOUS WEB DESIGN 🖐</h1>
+    <h2 id="message"></h2>
+
+    <script>
+      const messageElement = document.getElementById("message");
+
+      const handleConnectionChange = () => {
+        const connection = navigator.connection;
+
+        if (connection) {
+          const { link } = connection;
+          const megabit = 2; // megabit per second
+          const isLess = link < megabit;
+
+          if (isLess || connection.effectiveType === "3g") {
+            messageElement.innerText = "Your Network is 3G";
+          }
+          if (connection.effectiveType === "4g") {
+            messageElement.innerText = "Your Network is 4G";
+          }
+          if (link === 0) {
+            messageElement.innerText =
+              "You may not be connected to the internet";
+          }
+        }
+      };
+
+      const updateOnlineStatus = () => {
+        if (navigator.onLine) {
+          messageElement.innerText = "You are online";
+          handleConnectionChange();
+        } else {
+          messageElement.innerText = "You are offline";
+        }
+      };
+
+      window.addEventListener("online", updateOnlineStatus);
+      window.addEventListener("offline", updateOnlineStatus);
+      navigator.connection.addEventListener("change", handleConnectionChange);
+
+      // Check the status on load
+      updateOnlineStatus();
+    </script>
+  </body>
+</html>
