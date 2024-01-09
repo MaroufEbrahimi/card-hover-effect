@@ -4,8 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text Animation</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>WELCOME TO FAMOUS WEB DESIGN</h1>
+    <div class="container">
+      <span class="text first_text">I'm a</span>
+      <span class="text second_text"></span>
+    </div>
+
+    <script>
+      const text = document.querySelector(".second_text");
+
+      const textLoad = () => {
+        setTimeout(() => {
+          text.textContent = "Full Stack Developer";
+        }, 0);
+        setTimeout(() => {
+          text.textContent = "Web Developer";
+        }, 4000);
+        setTimeout(() => {
+          text.textContent = "Teacher";
+        }, 8000);
+        setTimeout(() => {
+          text.textContent = "Freelancer";
+        }, 12000);
+      };
+      textLoad();
+      setInterval(textLoad, 16000);
+    </script>
   </body>
 </html>
